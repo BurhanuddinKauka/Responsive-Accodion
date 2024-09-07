@@ -1,0 +1,22 @@
+table{
+   width: 600px;
+   height: auto;
+   border-radius: 20px;
+}
+
+table, th, td{
+   border: 1px solid black;
+   border-collapse: collapse;
+}
+
+thead{
+   background-color: rgb(255, 215, 55);
+}
+
+th{
+   text-align: left;
+}
+
+th, td{
+   padding: 10px;
+}

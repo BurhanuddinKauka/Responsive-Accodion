@@ -1,0 +1,113 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+   min-height: 100vh;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto 1fr auto;
+   grid-template-areas: 
+   "navbar navbar"
+   "main main"
+   "footer footer"
+   ;
+}
+
+p{
+   text-align: justify;
+}
+
+nav{
+   top: 0;
+   position: sticky;
+   grid-area: navbar;
+   background-color: cornflowerblue;
+   color: white;
+   padding: 1em;
+   padding-left: 2em;
+}
+
+aside{
+   height: calc(100vh - 50px);
+   top: 50px;
+   position: sticky;
+   align-self: start;
+   grid-area: sidebar;
+   background-color: rgb(255, 223, 83);
+   display: none;
+}
+
+main{
+   grid-area: main;
+   padding: 2em;
+}
+
+footer{
+   grid-area: footer;
+   background-color: crimson;
+   color: white;
+   padding: 2em;
+}
+
+nav button{
+   display: none;
+}
+
+@media (max-width: 800px) {
+   body{
+      grid-template-columns: 1fr;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: 
+      "navbar navbar"
+      "main main"
+      "footer footer"
+      ;
+   }
+   nav{
+      display:flex;
+      align-items: center;
+      gap: 10px;
+   }
+   aside{
+      top: 75px;
+      position: fixed;
+      width: 100%;
+      left: -100%;
+      transition: all 1s cubic-bezier(0.76, 0, 0.38, 0.99);
+      padding: 1.5em;
+      display: block;
+   }
+   .show{
+      left: 0;
+   }
+   nav button{
+      display: block;
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

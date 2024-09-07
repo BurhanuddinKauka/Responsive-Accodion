@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Follows Mouse</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 150, 255, 0.7);
+            border-radius: 50%;
+            transform: translate(-50%, -50%); /* Center the circle on the cursor */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+
+    <script>
+      const circle = document.querySelector(".circle");
+
+      // Variables to store mouse and circle positions
+      let mouseX = 0, mouseY = 0;
+      let circleX = 0, circleY = 0;
+      const speed = 0.07; // Controls the lagging effect (smaller number = more lag)
+
+      document.addEventListener("mousemove", function(event) {
+         // Update the mouse's X and Y positions
+         mouseX = event.clientX;
+         mouseY = event.clientY;
+      });
+
+      function moveCircle() {
+         // Calculate the distance to move the circle
+         circleX += (mouseX - circleX) * speed;
+         circleY += (mouseY - circleY) * speed;
+
+         // Apply the new position to the circle
+         circle.style.left = `${circleX}px`;
+         circle.style.top = `${circleY}px`;
+
+         // Keep the animation running
+         requestAnimationFrame(moveCircle);
+      }
+
+      // Start moving the circle
+      moveCircle();
+
+    </script>
+</body>
+</html>

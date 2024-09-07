@@ -1,0 +1,48 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+   height: 100%;
+   width: 100%;
+   background-color: rgb(255, 234, 209);
+   display:flex;
+   justify-content: flex-end;
+   padding: 2em;
+}
+
+details{
+   /* margin: 1.5em; */
+   position: relative;
+}
+
+details summary{
+   list-style: none;
+}
+
+summary i{
+   font-size: 1.5rem;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+details ul{
+   position: absolute;
+   right: 100%;
+   list-style: none;
+   width: max-content;
+   background-color: #fff;
+   border-radius: 5px;
+}
+
+details ul li{
+   padding: 10px 20px;
+   cursor: pointer;
+
+   &:hover{
+      background-color: #dedede;
+   }
+}
